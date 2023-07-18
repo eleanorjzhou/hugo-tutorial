@@ -1,0 +1,24 @@
+baseURL = 'http://localhost:1313/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+
+sectionPagesMenu = 'main'
+
+[menu]
+[[menu.main]]
+  name = 'Home'
+  pageRef = '/'
+  weight = 10
+[[menu.main]]
+  name = 'Documentation'
+  pageRef = '/documentation'
+  weight = 20
+[[menu.main]]
+  name = 'Blog'
+  pageRef = '/blog'
+  weight = 30
+[[menu.main]]
+  name = 'About'
+  pageRef = '/about'
+  weight = 30
+

@@ -1,9 +1,21 @@
 <ul>
 
     {{ range .Pages }}
-      <li>
-        <a href="{{ .Permalink }}">{{ .PublishDate.Format "January 2, 2006" }} - {{ .Title }}</a>
-        <p>{{.Summary}}</p>
+      <li class="card m-4">
+
+        <div class="card-content">
+
+          <div class="content p-2">
+            <a href="{{ .Permalink }}">
+              <h4>
+                {{ .PublishDate.Format "January 2, 2006" }} - {{ .Title }}
+              </h4>
+              <p>{{.Summary}}</p>
+            </a>
+          </div>
+          
+        </div>
+        
       </li>
     {{ end }}
 

@@ -98,7 +98,31 @@ This is the landing page. Here, you can provide an introduction or overview of t
 
 
 ## Partials
-These are the components of the site.
+These are the components (e.g. header, footer) of the site. 
+The partial html files will always live in the `/partials` folder.
+To fetch a partial into the `_default` html files or the `index.html` file, we can use `{{ partial "partial.html" . }}`.
+For example:
+```
+# section.html
+
+<body>
+    <!-- Header -->
+    {{ partial "header.html" . }}
+    
+    <!-- Your page content here -->
+    {{ partial "page-section.html" . }}
+
+    <!-- Footer -->
+    {{ partial "footer.html" . }}
+
+    <!-- Additional JavaScript code -->
+    <script>
+        // Your JavaScript code here
+    </script>
+</body>
+
+```
+
 
 
 

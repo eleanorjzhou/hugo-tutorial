@@ -39,7 +39,7 @@ If we need a separate landing page or homepage, we can use the `index.html` file
 ## Archetypes
 
 
-### Menu
+## Menu
 To configure a navigation menu, we can do the following:
 1. Initialize the menu in the `config.toml` file:
 ```
@@ -123,6 +123,56 @@ For example:
 
 ```
 
+## Blog Setup
+We created a `page-section.html` file for a general layout of all the menu pages.
+But now we need a separate layout for the Blog page to display a list of blog posts.
+To do so, we can:
+1. Create a new partial html file for the blog page
+2. Use conditionals to display the blog partial when the page title is "Blog":
+```
+# page-section.html
+
+{{ $title := "Blog" }}
+    {{ if eq .Title $title }}
+    <section>
+      This is the blog section
+    </section>
+    {{ else }}
+    <h1>Not blog</h1>
+    {{ end }}
+```
+
+## List of articles
+To get the list of articles, we can create a sparate partial html file `article-list.html` and do the following:
+1. Fetch the list of articles:
+```
+# article-list.html
+
+<ul>
+
+  {{ range .Pages }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .PublishDate.Format "January 2, 2006" }} - {{ .Title }}</a>
+      <p>{{.Summary}}</p>
+    </li>
+  {{ end }}
+
+</ul>
+```
+
+2. Import the article list partial into the page section:
+```
+# page-section.html
+
+{{ $title := "Blog" }}
+    {{ if eq .Title $title }}
+    <section>
+      {{ partial "article-list.html" . }}
+    </section>
+    {{ else }}
+    <h1>Not blog</h1>
+    {{ end }}
+```
 
 
 

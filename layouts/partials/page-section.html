@@ -9,54 +9,64 @@
     </div>
 </section>
 
-<section class="section is-large">
-    <h1 class="title">Large section</h1>
-    <h2 class="subtitle">
-      A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading.
-    </h2>
-</section>
+{{ $title := "Blog" }}
+    {{ if eq .Title $title }}
+    <!-- if it is the blog page -->
+    <section class="section is-medium">
+      {{ partial "article-list.html" . }}
+    </section>
+    {{ else }}
+      <!-- if not the blog page -->
+      <section class="section is-large">
+        <h1 class="title">Large section</h1>
+        <h2 class="subtitle">
+          A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading.
+        </h2>
+      </section>
+      
+      <section class="level">
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">Tweets</p>
+              <p class="title">3,456</p>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">Following</p>
+              <p class="title">123</p>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">Followers</p>
+              <p class="title">456K</p>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">Likes</p>
+              <p class="title">789</p>
+            </div>
+          </div>
+      </section>
+      
+      <section class="section is-large">
+          <h1 class="title">Large section</h1>
+          <h2 class="subtitle">
+            A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading.
+          </h2>
+      </section>
+      
+      <section class="container">
+          {{ partial "contact-form.html" . }}
+      </section>
+      
+      <section class="section is-large">
+          <h1 class="title">Large section</h1>
+          <h2 class="subtitle">
+            A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading.
+          </h2>
+      </section>
 
-<section class="level">
-    <div class="level-item has-text-centered">
-      <div>
-        <p class="heading">Tweets</p>
-        <p class="title">3,456</p>
-      </div>
-    </div>
-    <div class="level-item has-text-centered">
-      <div>
-        <p class="heading">Following</p>
-        <p class="title">123</p>
-      </div>
-    </div>
-    <div class="level-item has-text-centered">
-      <div>
-        <p class="heading">Followers</p>
-        <p class="title">456K</p>
-      </div>
-    </div>
-    <div class="level-item has-text-centered">
-      <div>
-        <p class="heading">Likes</p>
-        <p class="title">789</p>
-      </div>
-    </div>
-</section>
-
-<section class="section is-large">
-    <h1 class="title">Large section</h1>
-    <h2 class="subtitle">
-      A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading.
-    </h2>
-</section>
-
-<section class="container">
-    {{ partial "contact-form.html" . }}
-</section>
-
-<section class="section is-large">
-    <h1 class="title">Large section</h1>
-    <h2 class="subtitle">
-      A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading.
-    </h2>
-</section>
+    {{ end }}

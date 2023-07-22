@@ -1,0 +1,10 @@
+<ul>
+
+    {{ range .Pages }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .PublishDate.Format "January 2, 2006" }} - {{ .Title }}</a>
+        <p>{{.Summary}}</p>
+      </li>
+    {{ end }}
+
+</ul>

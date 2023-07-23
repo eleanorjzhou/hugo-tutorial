@@ -2,6 +2,8 @@
 
 ## Create custom theme
 
+For details, See: [Hugo Templates documentation](https://gohugo.io/documentation/)
+
 ### Setup 
 1. Create a new site: `hugo new site newSite`
 2. Go into the new site folder: `cd newSite`

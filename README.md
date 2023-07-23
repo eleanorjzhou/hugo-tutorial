@@ -198,18 +198,15 @@ To get the list of articles, we can create a sparate partial html file `article-
 </ul>
 ```
 
-2. Import the article list partial into the page section:
+2. Import the article list partial into the blog page section:
 ```
-# page-section.html
+# layouts/blog/section.html
 
-{{ $title := "Blog" }}
-    {{ if eq .Title $title }}
-    <section>
-      {{ partial "article-list.html" . }}
-    </section>
-    {{ else }}
-    <h1>Not blog</h1>
-    {{ end }}
+<section class="section is-medium">
+
+  {{ partial "article-list" . }}
+
+</section>
 ```
 
 

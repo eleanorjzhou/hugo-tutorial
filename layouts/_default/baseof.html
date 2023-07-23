@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Description of your website">
+        <title>
+            {{ .Site.Title }}
+        </title>
+        
+        <!-- Additional CSS and JavaScript files -->
+        <link rel="stylesheet" href="/css/global.css">
+        
+        <!-- Favicon -->
+        <link rel="icon" href="/path/to/your/favicon.ico">
+    </head>
+<body>
+    <!-- Header -->
+    {{ partial "header.html" . }}
+    
+    <!-- Your website content here -->
+    {{ block "main" . }}
+    {{ end }}
+
+    <!-- Footer -->
+    {{ partial "footer.html" . }}
+
+    <!-- Additional JavaScript code -->
+    <script>
+        // Your JavaScript code here
+    </script>
+</body>
+</html>
+

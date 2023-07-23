@@ -1,0 +1,23 @@
+{{ define "main" }}
+<!-- Single post layout -->
+
+<div class="container">
+
+    <div class="section is-medium">
+
+        <article class="content">
+
+            <h1>{{ .Title }}</h1>
+            <p>{{ .PublishDate.Format "January 2, 2006" }}</p>
+    
+            <hr>
+    
+            {{ .Content }}
+    
+        </article>
+
+    </div>
+    
+</div>
+
+{{ end }}

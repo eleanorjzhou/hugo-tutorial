@@ -173,7 +173,7 @@ To do so, we can:
 
 <section class="section is-medium">
 
-    {{ partial "article-list" . }}
+  <!-- Insert partial for list of blog post here -->
 
 </section>
 
@@ -181,7 +181,7 @@ To do so, we can:
 ```
 
 ## List of articles
-To get the list of articles, we can create a sparate partial html file `article-list.html` and do the following:
+To get the list of blog posts, we can create a sparate partial html file `article-list.html` and do the following:
 1. Fetch the list of articles:
 ```
 # article-list.html
@@ -198,9 +198,9 @@ To get the list of articles, we can create a sparate partial html file `article-
 </ul>
 ```
 
-2. Import the article list partial into the blog page section:
+2. Insert the article list partial into the blog page section:
 ```
-# layouts/blog/section.html
+# /layouts/blog/section.html
 
 <section class="section is-medium">
 
